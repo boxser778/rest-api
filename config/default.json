@@ -1,0 +1,6 @@
+{
+  "dbConfig": {
+    "connectionString": "mongodb://localhost/rest-api-app"
+  },
+  "jwtSecretKey": "this is secret key that should not be visible to anyone!"
+}
