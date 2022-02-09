@@ -1,7 +1,7 @@
 const jwt = require("jsonwebtoken");
 const config = require("config");
 
-//create token
+//create tokenn
 const generateToken = (data) => {
     return new Promise((resolve, reject) => {
         jwt.sign(

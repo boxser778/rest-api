@@ -1,8 +1,5 @@
-
-<<<<<<< HEAD
 node js
 
-<<<<<<< HEAD
 liberies: express ,bcrypt ,config ,jwt ,joi ,mongoose ,nodemon
 
 <!-- !create new user (no token require) -->
@@ -78,10 +75,3 @@ liberies: express ,bcrypt ,config ,jwt ,joi ,mongoose ,nodemon
     "_id":"6203dcb404835913241d52e7"
 }
 -->
-
-=======
-libraries used: express ,bcryptjs ,config ,jwt ,joi ,mongoose ,nodemon
-
-> > > > > > > c73acdb43c05d679e82dfacde9bd15e2f76780c3
-=======
->>>>>>> ce32308f905926a3deb3e7d7fa287d432ec99773
