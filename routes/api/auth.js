@@ -39,6 +39,8 @@ router.post("/login", async (req, res) => {
             abortEarly: false,
         });
         const userData = await UserModel.selectUserByEmail(value.email);
+        value.id = userData[0]._id;
+        value.biz = userData[0].biz;
         if (userData.length != 0) {
             const resBcrypt = await bcrypt.cmpHash(
                 value.password,
@@ -46,7 +48,8 @@ router.post("/login", async (req, res) => {
             );
             if (resBcrypt) {
                 const jwtToken = await jwt.generateToken({
-                    email: value.email
+                    id: value.id,
+                    biz: value.biz
                 });
                 res.json({
                     status: "ok",
