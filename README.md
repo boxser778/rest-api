@@ -1,3 +1,7 @@
+after download the project run 
+npm i in termintal 
+and to run type in termintal npm run dev
+
 node js
 
 liberies: express ,bcrypt ,config ,jwt ,joi ,mongoose ,nodemon
