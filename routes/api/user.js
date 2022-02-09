@@ -6,7 +6,6 @@ const router = express.Router();
 
 /* GET users listing. */
 router.get("/", async (req, res) => {
-    //   console.log(req.jwtData);
     try {
         const userData = await UserModel.selectUserByEmail(req.jwtData.email);
         res.json(userData);

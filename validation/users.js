@@ -18,7 +18,7 @@ const loginObj = {
         .messages({
             "string.pattern.base": "please enter valid password",
         })
-        .required(),
+        .required()
 };
 
 const signupObj = {
@@ -30,7 +30,7 @@ const signupObj = {
 const schemaSignup = Joi.object(signupObj);
 
 //login schema
-const schemaLogin = Joi.object(loginObj);
+const schemaLogin = Joi.object(loginObj)
 
 module.exports.schemaSignup = schemaSignup;
 module.exports.schemaLogin = schemaLogin;

@@ -11,15 +11,21 @@ router.post("/signup", async (req, res) => {
             abortEarly: false,
         });
         value.password = await bcrypt.createHash(value.password);
-        const userData = await UserModel.selectUserByEmail(value.email);
-        if (userData.length != 0) {
-            throw "email already exists";
-        } else {
-            await UserModel.insertUser(value.name, value.email, value.password);
-            res.json({
-                status: "ok",
-                msg: "user created"
+        const userExistenceCheck = await UserModel.selectUserByEmail(value.email);
+        if (userExistenceCheck.length != 0) {
+            throw res.json({
+                status: 400,
+                msg: "email already exists"
             });
+        } else {
+            await UserModel.insertUser(value.name, value.email, value.password, value.biz = false);
+            const pullExistUser = await UserModel.selectUserByEmail(value.email);
+            value.id = pullExistUser[0]._id;
+            res.json({
+                status: 200,
+                msg: [value.id, value.email, value.name]
+            });
+
         }
     } catch (err) {
         console.log(err);

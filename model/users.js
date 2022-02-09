@@ -1,8 +1,9 @@
 const mongoose = require("mongoose");
-
+const ObjectId = mongoose.Types.ObjectId;
 const Schema = mongoose.Schema;
 
 const usersSchema = new Schema({
+    id: Schema.Types.ObjectId,
     email: {
         type: String,
         required: true
@@ -15,26 +16,19 @@ const usersSchema = new Schema({
         type: String,
         required: true
     },
+    biz: Boolean
 });
 
 const Users = mongoose.model("Users", usersSchema);
 
-const insertUser = (name, email, password) => {
+const insertUser = (name, email, password, biz) => {
     const user = new Users({
         name,
         email,
         password,
+        biz
     });
     return user.save();
-};
-
-const updateUserById = (name, email, password) => {
-    Users.findById("61e6af387c1af7af12d66c50").then((userDoc) => {
-        userDoc.name = name;
-        userDoc.email = email;
-        userDoc.password = password;
-        userDoc.save();
-    });
 };
 
 const selectUserByEmail = (email) => {
@@ -43,10 +37,8 @@ const selectUserByEmail = (email) => {
     });
 };
 
-const deleteUserById = (id) => {
-    return Users.deleteOne({
-        _id: id
-    });
+const findUserById = (_id) => {
+    return Users.findById(_id = id)
 };
 
 const selectAllUsers = () => {
@@ -55,8 +47,7 @@ const selectAllUsers = () => {
 
 module.exports = {
     insertUser,
-    updateUserById,
-    deleteUserById,
     selectAllUsers,
     selectUserByEmail,
+    findUserById
 };
