@@ -39,13 +39,17 @@ router.post('/', async (req, res) => {
         const userData = await userModel.selectUserByEmail(req.jwtData.email);
         console.log("this is use Data:", userData);
         const cardsData = await cardsModel.insertCard(value.bizName, value.bizDescription, value.bizPostal, value.bizNumber, value.bizImage, userData[0]._id)
-
         console.log("cardsData", cardsData);
         console.log("userData", userData);
-        res.json({
-            status: "ok",
-            msg: "created"
+        res.status(200).json({
+            status: 200,
+            cardsData
+
         });
+
+        // res.status(200).json({
+        //     cardsData
+        // })
     } catch (err) {
         console.log("error was found", err);
         res.status(400).json(err);
