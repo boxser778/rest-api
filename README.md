@@ -1,6 +1,5 @@
 node js
 
-after download the project run 
 run this command in terminal (installing all the packages required): npm i 
 to start project: npm run dev 
 
