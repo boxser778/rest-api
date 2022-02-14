@@ -1,8 +1,8 @@
 node js
 
 after download the project run 
-runt his command in terminal: npm i
-to start: npm run dev 
+run this command in terminal: npm i
+to start project: npm run dev 
 
 liberies: express ,bcrypt ,config ,jwt ,joi ,mongoose ,nodemon
 
