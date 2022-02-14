@@ -6,10 +6,6 @@ to start: npm run dev
 
 liberies: express ,bcrypt ,config ,jwt ,joi ,mongoose ,nodemon
 
-
-
-
-
 <!-- !create new user (no token require) -->
 <!-- ?method : POST -->
 <!-- route --> localhost:3000/api/auth/signup
