@@ -1,8 +1,8 @@
-after download the project run 
-npm i in termintal 
-and to run type in termintal npm run dev
-
 node js
+
+after download the project run 
+runt his command in terminal: npm i
+to start: npm run dev 
 
 liberies: express ,bcrypt ,config ,jwt ,joi ,mongoose ,nodemon
 
