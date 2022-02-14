@@ -28,8 +28,10 @@ router.post("/signup", async (req, res) => {
 
         }
     } catch (err) {
-        console.log(err);
-        res.json(err);
+        res.json({
+            status: 400,
+            err
+        });
     }
 });
 
@@ -64,8 +66,10 @@ router.post("/login", async (req, res) => {
             msg: "please check your email or password"
         });
     } catch (err) {
-        console.log(err);
-        res.json(err);
+        res.json({
+            status: 400,
+            err
+        });
     }
 });
 

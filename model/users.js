@@ -33,7 +33,7 @@ const insertUser = (name, email, password, biz) => {
 
 const selectUserByEmail = (email) => {
     return Users.find({
-        email: email
+        _email: email
     });
 };
 

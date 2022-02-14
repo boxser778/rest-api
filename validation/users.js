@@ -12,6 +12,7 @@ const loginObj = {
         .messages({
             "any.required": "please input a valid email",
             "string.email": "please use mails only from .com and .net",
+            'string.empty': `"email" cannot be an empty field`,
         }),
     password: Joi.string()
         .pattern(new RegExp("^[a-zA-Z0-9]{3,30}$"))
